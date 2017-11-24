@@ -2,6 +2,10 @@
 
 ## In develop
 
+## 1.0.11
+
+* Added access to tool config from json files, to allow configurable tools.
+
 ## 1.0.10
 
 * Added ngSanitize.
