@@ -16,7 +16,7 @@
       <span data-ng-class="{'is-active': showFromUser == 'mine'}" class="overview--filter-twosplit-right" data-ng-click="setUser('mine', 'screen')">Mine</span>
     </div>
   </div>
-  <div class="overview--groups">
+  <div class="overview--groups" data-ng-if="userGroups && userGroups.length > 0">
     <label class="overview--label">Grupper:</label>
     <div class="overview--checkboxes">
       <span class="overview--checkbox" ng-repeat="group in userGroups">

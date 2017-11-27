@@ -236,7 +236,8 @@
   }
 
   &--form {
-    margin: 0;
+    max-width: 50em;
+    margin: 0 auto;
   }
 
   &--title[type="text"] {
