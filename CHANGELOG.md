@@ -2,6 +2,12 @@
 
 ## In develop
 
+## 1.0.12
+
+* Fixed z-index for "continue" button in slide/channel create.
+* Fixed styling for group filter in overviews.
+* Hide groups in overviews when user is not in a group.
+
 ## 1.0.11
 
 * Added access to tool config from json files, to allow configurable tools.
