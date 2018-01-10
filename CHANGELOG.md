@@ -2,6 +2,12 @@
 
 ## In develop
 
+## 1.0.13
+
+* Fixed submenu code to activate sub menu based on first part of path.
+* Fixed active-filter for admin/users and admin/groups.
+* Updated npm packages.
+
 ## 1.0.12
 
 * Fixed z-index for "continue" button in slide/channel create.
