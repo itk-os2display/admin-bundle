@@ -4,6 +4,7 @@
 
 * Fixed submenu code to activate sub menu based on first part of path.
 * Fixed active-filter for admin/users and admin/groups.
+* Updated npm packages.
 
 ## 1.0.12
 
