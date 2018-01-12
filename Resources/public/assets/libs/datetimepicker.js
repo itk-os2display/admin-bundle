@@ -11,14 +11,28 @@
 angular.module('datetimePicker', [])
 .directive('datetimePicker', function () {
   return {
+    scope: {
+      config: '='
+    },
     restrict: 'A',
     require: '^ngModel',
     link: function(scope, el, attrs, ctrl) {
       var dateFormat = 'DD/MM/YYYY HH:mm';
-      el.datetimepicker({
-        lang: 'da',
-        format: 'd/m/Y H:i'
-      });
+      var config = null;
+
+      if (scope.config) {
+        config = scope.config;
+      }
+      else {
+        config = {
+            lang: 'da',
+            format: 'd/m/Y H:i',
+            scrollMonth: false,
+            scrollTime:	false
+        };
+      }
+
+      el.datetimepicker(config);
 
       ctrl.$formatters.unshift(function (modelValue) {
         if (!modelValue) {

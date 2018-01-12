@@ -2,6 +2,8 @@
 
 ## In develop
 
+* Made datepicker configurable.
+
 ## 1.0.13
 
 * Fixed submenu code to activate sub menu based on first part of path.
