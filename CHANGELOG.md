@@ -3,6 +3,7 @@
 ## In develop
 
 * Made datepicker configurable.
+* Moved BaseApiController to mainModule.
 
 ## 1.0.13
 
