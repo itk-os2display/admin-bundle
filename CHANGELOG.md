@@ -4,6 +4,7 @@
 
 * Made datepicker configurable.
 * Moved BaseApiController to mainModule.
+* Removed unused call to get all channels in slide create.
 
 ## 1.0.13
 

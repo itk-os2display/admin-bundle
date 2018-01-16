@@ -30,12 +30,6 @@ angular.module('ikApp').controller('SlideController', ['$scope', '$controller', 
         });
       }
     );
-    $scope.channels = [];
-
-    // Get all channels for step 6
-    channelFactory.getChannels().then(function (data) {
-      $scope.channels = data;
-    });
 
     // Setup the editor.
     $scope.editor = {
