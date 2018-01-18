@@ -5,6 +5,7 @@
 * Made datepicker configurable.
 * Moved BaseApiController to mainModule.
 * Removed unused call to get all channels in slide create.
+* Moved shared components from ikApp to the module ikShared, so it can be injected in other apps.
 
 ## 1.0.13
 
