@@ -32,8 +32,6 @@ angular.module('ikShared').directive('itkHeader', ['busService', '$timeout', '$c
                     return;
                 }
 
-                console.log(scope.entity)
-
                 var event = 'itkHeader.' + scope.event;
                 var html = '';
 
