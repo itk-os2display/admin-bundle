@@ -2,6 +2,10 @@
 
 ## In develop
 
+## In hotfix/support-1424-fixed-missing-template-issue
+
+* Fixed issue with missing slide/screen templates.
+
 ## 1.0.13
 
 * Fixed submenu code to activate sub menu based on first part of path.

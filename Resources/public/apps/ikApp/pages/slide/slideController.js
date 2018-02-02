@@ -15,7 +15,7 @@ angular.module('ikApp').controller('SlideController', ['$scope', '$controller', 
     $scope.steps = 6;
     $scope.slide = {};
     $scope.templates = [];
-    templateFactory.getSlideTemplates().then(
+    templateFactory.getEnabledSlideTemplates().then(
       function success(data) {
         for (var key in data) {
           if (data.hasOwnProperty(key)) {
