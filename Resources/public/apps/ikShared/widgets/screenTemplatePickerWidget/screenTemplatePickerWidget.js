@@ -28,7 +28,7 @@
         replace: true,
         link: function (scope) {
           scope.templates = [];
-          templateFactory.getScreenTemplates().then(
+          templateFactory.getEnabledScreenTemplates().then(
             function success(data) {
               scope.templates = data;
             },
