@@ -36,17 +36,17 @@ angular.module('ikApp').directive('ikSharedSlide', [
           scope.templateURL = scope.ikSlide.preview_path;
 
           scope.theStyle = {
-            width: "" + scope.ikWidth + "px",
-            height: "" + parseFloat(1080.0 * parseFloat(scope.ikWidth / 1920.0)) + "px"
+            width: '' + scope.ikWidth + 'px',
+            height: '' + parseFloat(1080.0 * parseFloat(scope.ikWidth / 1920.0)) + 'px'
           };
 
           if (scope.ikSlide.options.fontsize) {
-            scope.theStyle.fontsize = "" + parseFloat(scope.ikSlide.options.fontsize * parseFloat(scope.ikWidth / 1920)) + "px"
+            scope.theStyle.fontsize = '' + parseFloat(scope.ikSlide.options.fontsize * parseFloat(scope.ikWidth / 1920)) + 'px';
           }
         });
       },
       template: '<div class="preview--slide" data-ng-include="" src="templateURL"></div>'
-    }
+    };
   }
 ]);
 

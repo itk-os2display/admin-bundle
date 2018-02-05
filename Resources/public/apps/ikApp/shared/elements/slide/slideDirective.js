@@ -8,7 +8,8 @@
  * @param ik-id: the id of the slide.
  * @param ik-width: the width of the slide.
  */
-angular.module('ikApp').directive('ikSlide', ['slideFactory', 'templateFactory', 'busService',
+angular.module('ikApp').directive('ikSlide', [
+  'slideFactory', 'templateFactory', 'busService',
   function (slideFactory, templateFactory, busService) {
     'use strict';
 
@@ -37,9 +38,9 @@ angular.module('ikApp').directive('ikSlide', ['slideFactory', 'templateFactory',
           }
           else {
             if (scope.ikSlide.media.length > 0 &&
-                scope.ikSlide.media[0].provider_metadata.length > 0 &&
-                scope.ikSlide.media[0].provider_metadata[0].thumbnails &&
-                scope.ikSlide.media[0].provider_metadata[0].thumbnails.length > 0
+              scope.ikSlide.media[0].provider_metadata.length > 0 &&
+              scope.ikSlide.media[0].provider_metadata[0].thumbnails &&
+              scope.ikSlide.media[0].provider_metadata[0].thumbnails.length > 0
             ) {
               scope.ikSlide.currentImage = scope.ikSlide.media[0].provider_metadata[0].thumbnails[1].reference;
             }
@@ -57,30 +58,33 @@ angular.module('ikApp').directive('ikSlide', ['slideFactory', 'templateFactory',
           }
 
           // Get the template.
-          templateFactory.getSlideTemplate(scope.ikSlide.template).then(
-            function success(data) {
-              scope.template = data;
-              scope.templateURL = scope.template.paths.preview;
+          templateFactory.getSlideTemplate(scope.ikSlide.template)
+            .then(
+              function success (data) {
+                if (!data.enabled) {
+                  scope.slideError = '"' + data.name + '" skabelonen er ikke aktiveret.';
+                }
+                else {
+                  scope.template = data;
+                  scope.templateURL = scope.template.paths.preview;
 
-              scope.theStyle = {
-                width: "" + scope.ikWidth + "px",
-                height: "" + parseFloat(scope.template.ideal_dimensions.height * parseFloat(scope.ikWidth / scope.template.ideal_dimensions.width)) + "px"
-              };
+                  scope.theStyle = {
+                    width: '' + scope.ikWidth + 'px',
+                    height: '' + parseFloat(scope.template.ideal_dimensions.height * parseFloat(scope.ikWidth / scope.template.ideal_dimensions.width)) + 'px'
+                  };
 
-              if (scope.ikSlide.options.fontsize) {
-                scope.theStyle.fontsize = "" + parseFloat(scope.ikSlide.options.fontsize * parseFloat(scope.ikWidth / scope.template.ideal_dimensions.width)) + "px"
+                  if (scope.ikSlide.options.fontsize) {
+                    scope.theStyle.fontsize = '' + parseFloat(scope.ikSlide.options.fontsize * parseFloat(scope.ikWidth / scope.template.ideal_dimensions.width)) + 'px';
+                  }
+                }
+              },
+              function error () {
+                scope.slideError = '"' + scope.ikSlide.template + '" skabelonen blev ikke fundet.';
               }
-            },
-            function error(reason) {
-              busService.$emit('log.error', {
-                'cause': reason,
-                'msg': 'Hentning af templates fejlede.'
-              });
-            }
-          );
+            );
         });
       },
-      template: '<div class="preview--slide" data-ng-style="{\'width\': theStyle.width}" data-ng-include="" src="templateURL"></div>'
-    }
+      template: '<div data-ng-if="slideError" style="color: black;">{{ slideError }}</div><div class="preview--slide" data-ng-style="{\'width\': theStyle.width}" data-ng-include="" src="templateURL" data-ng-if="!slideError && template"></div>'
+    };
   }
 ]);

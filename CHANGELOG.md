@@ -2,6 +2,10 @@
 
 ## In develop
 
+## 1.0.14
+
+* Fixed issue with missing slide/screen templates.
+
 ## 1.0.13
 
 * Fixed submenu code to activate sub menu based on first part of path.
