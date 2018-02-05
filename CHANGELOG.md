@@ -2,7 +2,7 @@
 
 ## In develop
 
-## In hotfix/support-1424-fixed-missing-template-issue
+## 1.0.14
 
 * Fixed issue with missing slide/screen templates.
 
