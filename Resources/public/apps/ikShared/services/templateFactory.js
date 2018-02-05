@@ -6,7 +6,8 @@
 /**
  * Template factory. Main entry point for templates.
  */
-angular.module('ikShared').factory('templateFactory', ['$q', '$http',
+angular.module('ikApp').factory('templateFactory', [
+  '$q', '$http',
   function ($q, $http) {
     'use strict';
 
@@ -26,7 +27,7 @@ angular.module('ikShared').factory('templateFactory', ['$q', '$http',
         defer.resolve(slideTemplates);
       }
       else {
-        $http.get('/api/templates/slides/enabled')
+        $http.get('/api/templates/slides/all')
           .success(function (data) {
             slideTemplates = data;
             defer.resolve(slideTemplates);
@@ -78,7 +79,7 @@ angular.module('ikShared').factory('templateFactory', ['$q', '$http',
         defer.resolve(screenTemplates);
       }
       else {
-        $http.get('/api/templates/screens/enabled')
+        $http.get('/api/templates/screens/all')
           .success(function (data) {
             screenTemplates = data;
             defer.resolve(screenTemplates);
@@ -128,9 +129,10 @@ angular.module('ikShared').factory('templateFactory', ['$q', '$http',
       var defer = $q.defer();
 
       $http.post('/api/templates/save/enabled', {
-        "screens": enabledScreenTemplates,
-        "slides": enabledSlideTemplates
+        'screens': enabledScreenTemplates,
+        'slides': enabledSlideTemplates
       })
+
         .success(function (data, status) {
           $http.get('/api/templates/slides/enabled')
             .success(function (data) {
@@ -157,16 +159,15 @@ angular.module('ikShared').factory('templateFactory', ['$q', '$http',
     };
 
     /**
-     * Get all slide templates.
+     * Get enabled slide templates.
      * @returns {*}
      */
-    factory.getAllSlideTemplates = function () {
+    factory.getEnabledSlideTemplates = function () {
       var defer = $q.defer();
 
-      $http.get('/api/templates/slides/all')
+      $http.get('/api/templates/slides/enabled')
         .success(function (data) {
-          slideTemplates = data;
-          defer.resolve(slideTemplates);
+          defer.resolve(data);
         })
         .error(function (data, status) {
           defer.reject(status);
@@ -176,16 +177,15 @@ angular.module('ikShared').factory('templateFactory', ['$q', '$http',
     };
 
     /**
-     * Get all screen templates.
+     * Get enabled screen templates.
      * @returns {*}
      */
-    factory.getAllScreenTemplates = function () {
+    factory.getEnabledScreenTemplates = function () {
       var defer = $q.defer();
 
-      $http.get('/api/templates/screens/all')
+      $http.get('/api/templates/screens/enabled')
         .success(function (data) {
-          slideTemplates = data;
-          defer.resolve(slideTemplates);
+          defer.resolve(data);
         })
         .error(function (data, status) {
           defer.reject(status);
