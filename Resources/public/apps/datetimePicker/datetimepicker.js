@@ -15,7 +15,8 @@ angular.module('datetimePicker', []);
 /**
  * Configurable datetime picker.
  */
-angular.module('datetimePicker').directive('datetimePicker', function ($timeout) {
+angular.module('datetimePicker')
+    .directive('datetimePicker', function ($timeout) {
         return {
             scope: {
                 config: '='
@@ -63,15 +64,19 @@ angular.module('datetimePicker').directive('datetimePicker', function ($timeout)
                         var date = moment(viewValue, dateFormat);
                         return (date && date.isValid() && date.year() >= 1970) ? date.unix() : null;
                     });
-                });
 
-                scope.$watch(function () {
-                    return ctrl.$modelValue;
-                }, function(newValue) {
-                    config.value = moment(newValue * 1000)
-                        .format(dateFormat);
-                    el.datetimepicker('destroy');
-                    el.datetimepicker(config);
+                    scope.$watch(function () {
+                        return ctrl.$modelValue;
+                    }, function (newValue) {
+                        if (!newValue) {
+                            return;
+                        }
+
+                        config.value = moment(newValue * 1000)
+                            .format(dateFormat);
+                        el.datetimepicker('destroy');
+                        el.datetimepicker(config);
+                    });
                 });
             }
         };
@@ -126,7 +131,8 @@ angular.module('datetimePicker')
                     });
 
                     if (ctrl.$modelValue) {
-                        ctrl.$setViewValue(moment(ctrl.$modelValue * 1000).format(dateFormat));
+                        ctrl.$setViewValue(moment(ctrl.$modelValue * 1000)
+                            .format(dateFormat));
                         ctrl.$render();
                     }
 
@@ -140,7 +146,8 @@ angular.module('datetimePicker')
                             ctrl.$modelValue = moment().unix();
                         }
 
-                        ctrl.$setViewValue(moment(ctrl.$modelValue * 1000).format(dateFormat));
+                        ctrl.$setViewValue(moment(ctrl.$modelValue * 1000)
+                            .format(dateFormat));
                         ctrl.$render();
                     });
                 });
