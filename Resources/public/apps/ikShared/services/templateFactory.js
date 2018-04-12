@@ -6,7 +6,7 @@
 /**
  * Template factory. Main entry point for templates.
  */
-angular.module('ikApp').factory('templateFactory', [
+angular.module('ikShared').factory('templateFactory', [
   '$q', '$http',
   function ($q, $http) {
     'use strict';

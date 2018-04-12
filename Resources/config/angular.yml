@@ -14,7 +14,6 @@ assets:
     - bundles/os2displayadmin/assets/libs/angular-dnd.js
     - bundles/os2displayadmin/assets/libs/angular-tooltips.min.js
     - bundles/os2displayadmin/assets/libs/datetimepicker.jquery.js
-    - bundles/os2displayadmin/assets/libs/datetimepicker.js
     - bundles/os2displayadmin/assets/libs/locale_da.js
     - bundles/os2displayadmin/assets/libs/stacktrace.min.js
     - bundles/os2displayadmin/assets/libs/md5.min.js
@@ -68,6 +67,10 @@ modules:
       - bundles/os2displayadmin/apps/mainModule/services/userService.js
       - bundles/os2displayadmin/apps/mainModule/services/authHttpResponseInterceptor.js
 
+  datetimePicker:
+    files:
+      - bundles/os2displayadmin/apps/datetimePicker/datetimepicker.js
+
   styleguideComponentsModule:
     files:
       - bundles/os2displayadmin/apps/styleguideComponentsModule/styleguideComponents.js
@@ -100,6 +103,7 @@ modules:
       - bundles/os2displayadmin/apps/ikShared/elements/delete/deleteDirective.js
       - bundles/os2displayadmin/apps/ikShared/elements/channelShare/channelShareDirective.js
       - bundles/os2displayadmin/apps/ikShared/elements/checklist/checklistDirective.js
+      - bundles/os2displayadmin/apps/ikShared/elements/itkHeader/itkHeader.js
       - bundles/os2displayadmin/apps/ikShared/elements/screen/screenDirective.js
       - bundles/os2displayadmin/apps/ikShared/elements/slideOverview/slideOverviewDirective.js
       - bundles/os2displayadmin/apps/ikShared/elements/slide/slideDirective.js

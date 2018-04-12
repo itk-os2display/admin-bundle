@@ -87,7 +87,7 @@ angular.module('ikShared').directive('ikSlideEditable', [
                   else {
                     scope.template = data;
                     scope.slideTemplateURL = scope.template.paths.edit;
-                    scope.templateURL = 'bundles/os2displayadmin/apps/ikApp/shared/elements/slide/slide-edit.html?' + window.config.version;
+                    scope.templateURL = 'bundles/os2displayadmin/apps/ikShared/elements/slide/slide-edit.html?' + window.config.version;
 
                     // Setup the inline styling
                     scope.theStyle = {
