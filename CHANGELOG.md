@@ -1,7 +1,8 @@
 # CHANGELOG
 
-## In develop
+## 1.1.0
 
+* Added itk-header to allow injections into pages for decoupled bundles.
 * Made datepicker configurable.
 * Moved BaseApiController to mainModule.
 * Removed unused call to get all channels in slide create.
