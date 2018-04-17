@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## in develop
+
+* Made media upload buttons sticky.
+
 ## 1.1.0
 
 * Added itk-header to allow injections into pages for decoupled bundles.

@@ -58,7 +58,7 @@
         <ik-checklist elements="userGroups" selected="selectedGroups" identity="'id'" ng-hide="uploadInProgress || uploadComplete"></ik-checklist>
       </div>
     </div>
-    <div>
+    <div class="create-media--button-area">
       <div class="create-media--progress" data-ng-show="uploadInProgress && uploader.progress > 0">
         <div class="create-media--progress-bar" ng-style="{ 'width': getProgress() + '%' }">{{ getProgress() }} %</div>
       </div>
