@@ -3,6 +3,7 @@
 ## in develop
 
 * Made media upload buttons sticky.
+* Fixed datetime pickers.
 
 ## 1.1.0
 
