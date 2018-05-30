@@ -19,7 +19,8 @@ angular.module('datetimePicker')
     .directive('datetimePicker', function ($timeout) {
         return {
             scope: {
-                config: '='
+                config: '=',
+                watch: '='
             },
             restrict: 'A',
             require: '^ngModel',
@@ -65,18 +66,35 @@ angular.module('datetimePicker')
                         return (date && date.isValid() && date.year() >= 1970) ? date.unix() : null;
                     });
 
-                    scope.$watch(function () {
-                        return ctrl.$modelValue;
-                    }, function (newValue) {
-                        if (!newValue) {
-                            return;
+                    el.bind('blur', function () {
+                        var date = moment(ctrl.$viewValue, dateFormat);
+
+                        if (date && date.isValid() && date.year() >= 1970) {
+                            ctrl.$modelValue = date.unix();
+                        }
+                        else {
+                            ctrl.$modelValue = moment().unix();
                         }
 
-                        config.value = moment(newValue * 1000)
-                            .format(dateFormat);
-                        el.datetimepicker('destroy');
-                        el.datetimepicker(config);
+                        ctrl.$setViewValue(moment(ctrl.$modelValue * 1000)
+                            .format(dateFormat));
+                        ctrl.$render();
                     });
+
+                    if (scope.watch) {
+                        scope.$watch(function () {
+                            return ctrl.$modelValue;
+                        }, function (newValue) {
+                            if (!newValue) {
+                                return;
+                            }
+
+                            config.value = moment(newValue * 1000)
+                                .format(dateFormat);
+                            el.datetimepicker('destroy');
+                            el.datetimepicker(config);
+                        });
+                    }
                 });
             }
         };

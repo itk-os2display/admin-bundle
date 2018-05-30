@@ -1,5 +1,13 @@
 # CHANGELOG
 
+## in develop
+
+## 1.1.1
+
+* Made media upload buttons sticky.
+* Fixed datetime pickers.
+* Removed os2display requirements.
+
 ## 1.1.0
 
 * Added itk-header to allow injections into pages for decoupled bundles.
