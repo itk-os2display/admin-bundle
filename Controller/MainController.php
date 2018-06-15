@@ -37,10 +37,11 @@ class MainController extends Controller
         $user = $this->getUser();
         $user->buildRoleGroups();
         $user = $this->get('os2display.api_data')->setApiData($user);
-        $user = $this->get('serializer')
-            ->serialize($user, 'json', SerializationContext::create()
-                ->setGroups(array('api'))
-                ->enableMaxDepthChecks());
+        $user = $this->get('serializer')->serialize(
+            $user,
+            'json',
+            ['api']
+        );
 
         // Get angular modules and apps from other bundles.
         $externalAssets = $this->container->hasParameter('external_assets') ?

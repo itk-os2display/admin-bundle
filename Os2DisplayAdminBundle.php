@@ -6,8 +6,4 @@ use Symfony\Component\HttpKernel\Bundle\Bundle;
 
 class Os2DisplayAdminBundle extends Bundle
 {
-    public function getParent()
-    {
-        return 'FOSUserBundle';
-    }
 }

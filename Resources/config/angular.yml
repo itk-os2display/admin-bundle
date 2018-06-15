@@ -195,7 +195,6 @@ apps:
       - itkRegionPreviewWidget
       - itkDateComponent
       - itkDigitalClockComponent
-      - toolsModule
       - ikShared
 
   timelineApp:
