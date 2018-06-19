@@ -47,7 +47,7 @@ angular.module('mainModule').service('userService', [
     this.hasRole = function hasRole(role, user) {
       user || (user = currentUser);
 
-      var roles = (Object.keys(user.api_data.roles).map(function(key){return user.api_data.roles[key]}));
+      var roles = (Object.keys(user.apiData.roles).map(function(key){return user.apiData.roles[key]}));
 
       return user && user.api_data && user.api_data.roles &&
          roles.indexOf(role) !== -1;

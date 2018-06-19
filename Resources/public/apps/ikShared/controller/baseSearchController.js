@@ -40,7 +40,7 @@ angular.module('ikShared').controller('BaseSearchController', [
     };
 
     // Get current user viewable groups.
-    $scope.userGroups = angular.copy($scope.currentUser.api_data.viewable_groups);
+    $scope.userGroups = angular.copy($scope.currentUser.apiData.viewable_groups);
 
     /**
      * Build search filter based on selected groups.
