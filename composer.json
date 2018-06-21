@@ -3,7 +3,14 @@
     "description": "Os2Display admin",
     "type": "symfony-bundle",
     "require": {
-        "twig/extensions": "^1.0"
+        "twig/twig": "^1.0||^2.0",
+        "os2display/core-bundle": "dev-symf34"
+    },
+    "repositories": {
+        "os2display/core-bundle": {
+            "type": "vcs",
+            "url": "https://github.com/os2display/core-bundle"
+        }
     },
     "autoload": {
         "psr-4": {
