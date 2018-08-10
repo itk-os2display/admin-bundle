@@ -51,6 +51,7 @@ angular.module('ikShared').directive('itkHeader', ['busService', '$timeout', '$c
 
                 busService.$emit(event + '.requestItems', {
                     entity: scope.entity,
+                    scope: scope,
                     type: scope.type,
                     returnEvent: returnEvent
                 });
