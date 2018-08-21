@@ -56,7 +56,7 @@
         <span class="overview--channel-label">{{screen.title}}</span>
         <span class="overview--slide-date">- {{ screen.created_at * 1000 | date:'dd.MM.yyyy'}}</span>
       </div>
-      <itk-header entity="screen" type="screen" event="list.element"></itk-header>
+      <itk-header class="itk-header" entity="screen" type="screen" event="list.element"></itk-header>
     </div>
     <div class="overview--section" data-ng-show="!loading" ng-if="screens.length === 0">
       Ingen resultater.
