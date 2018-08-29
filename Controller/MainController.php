@@ -80,6 +80,7 @@ class MainController extends Controller
                 'bootstrap' => $mergedBootstrap,
                 'modules' => $mergedModules,
                 'templates' => $templateRenderArray,
+                'jsonTemplates' => json_encode($templateRenderArray),
                 'user' => $user
             ]
         );
