@@ -63,10 +63,14 @@
       },
       "version": "{{ version }}"
     };
+  </script>
 
-    var OS2DISPLAY_TEMPLATES = {{ jsonTemplates | raw }};
-
+  <script type="text/javascript">
     var OS2DISPLAY_CURRENT_USER = {{ user | raw }};
+  </script>
+
+  <script type="text/javascript">
+    var OS2DISPLAY_TEMPLATES = {{ jsonTemplates | raw }};
   </script>
 
   <script src="/proxy/socket.io/socket.io.js"></script>
