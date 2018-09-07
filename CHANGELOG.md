@@ -2,6 +2,10 @@
 
 ## in develop
 
+## 1.1.2
+
+* Fixed shared channel overview html.
+
 ## 1.1.1
 
 * Made media upload buttons sticky.
