@@ -2,6 +2,10 @@
 
 ## in develop
 
+## 1.1.3
+
+* Moved template load from templateService to .twig to speed up initial load and avoid multiple api calls.
+
 ## 1.1.2
 
 * Fixed shared channel overview html.
