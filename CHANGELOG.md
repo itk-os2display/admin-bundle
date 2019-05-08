@@ -1,48 +1,41 @@
 # CHANGELOG
 
-## in develop
+## 2.0.0
 
-## 1.1.3
+* Symfony 3.4 version.
 
-* Moved template load from templateService to .twig to speed up initial load and avoid multiple api calls.
+## 1.2.0
 
-## 1.1.2
-
-* Fixed shared channel overview html.
+* Merged https://github.com/os2display/admin-bundle/pull/8:
+  - Moved template load from templateService to .twig to speed up initial load and avoid multiple api calls.
+  - Fixed shared channel overview html.
 
 ## 1.1.1
+
+* Merged https://github.com/os2display/admin-bundle/pull/6: Only display the add role modal if the user has admin privileges.
+
+## 1.1.0
 
 * Made media upload buttons sticky.
 * Fixed datetime pickers.
 * Removed os2display requirements.
-
-## 1.1.0
-
 * Added itk-header to allow injections into pages for decoupled bundles.
 * Made datepicker configurable.
 * Moved BaseApiController to mainModule.
 * Removed unused call to get all channels in slide create.
 * Moved shared components from ikApp to the module ikShared, so it can be injected in other apps.
-
-## 1.0.14
-
 * Fixed issue with missing slide/screen templates.
-
-## 1.0.13
-
 * Fixed submenu code to activate sub menu based on first part of path.
 * Fixed active-filter for admin/users and admin/groups.
 * Updated npm packages.
-
-## 1.0.12
-
 * Fixed z-index for "continue" button in slide/channel create.
 * Fixed styling for group filter in overviews.
 * Hide groups in overviews when user is not in a group.
+* Added access to tool config from json files, to allow configurable tools.
 
 ## 1.0.11
 
-* Added access to tool config from json files, to allow configurable tools.
+* Merged PR: https://github.com/os2display/admin-bundle/pull/4
 
 ## 1.0.10
 
